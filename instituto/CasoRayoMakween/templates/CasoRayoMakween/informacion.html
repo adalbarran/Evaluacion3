@@ -2,22 +2,157 @@
 {% load static %}
 
 {% block body %}
+<style>     .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card-column {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .card-column:nth-child(2) {
+      justify-content: center;
+    }
+
+    .card-column:last-child {
+      justify-content: flex-end;
+    }
+
+    .card {
+      margin: 10px;
+      max-width: 300px;
+      width: 100%;
+    }
+    
+    </style>
+
 
 <section>
 
-    <div style=" background-color: rgb(250, 255, 255); text-align: centerdfx;">
-        <section>
-        <h6> Nuestro objetivo principal es brindarte una experiencia única y confiable en cada visita. Como taller mecánico, nos esforzamos por construir relaciones duraderas con nuestros clientes.  </h6>
-        </section>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-text" style="text-align: center; color: #000000; margin: 10px; text-shadow: black 0.1em 0.1em 0.2em">Servicio al cliente, Calidad y Integridad</h5>
-              <p class="card-text" style="text-align: center ; "> En nuestro taller mecánico, nuestros valores fundamentales son la integridad, la calidad y el servicio al cliente. Estos valores nos guían en todas nuestras interacciones y nos definen como profesionales de confianza en la industria automotriz.</p>
-            </div>
+  
+    
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="height: 200px;">
+            <img class="d-block w-100" src="{% static 'img/imgcaso/cambio-aceite-coche.jpg' %}" alt="First slide" style="width: 100%; height: auto; object-fit: contain">
           </div>
-        
+          <div class="carousel-item" style="height: 200px;">
+            <img class="d-block w-100" src="{% static 'img/imgcaso/neumaticos-cambio.jpg' %}" alt="Second slide" style="width: 100%; height: auto; object-fit: contain">
+          </div>
+          <div class="carousel-item" style="height: 200px;">
+            <img class="d-block w-100" src="{% static 'img/imgcaso/reparar-motores.jpg' %}" alt="Third slide" style="width: 100%; height: auto; object-fit: contain">
+          </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    
+  
+  
 
 </section>
+
+<section style="background-color: gray;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-3" style="width: 100%;">
+          <img src="{% static 'img/imgcaso/imagescolumna.png' %}" class="card-img-top" alt="Imagen de la tarjeta 1" style="width: 190px;">
+          <div class="card-body">
+            <h5 class="card-title" style="text-shadow: black 0.1em 0.1em 0.2em">Reparaciones certificadas</h5>
+            <p class="card-text">Nuestro equipo de expertos mecánicos certificados está capacitado para realizar reparaciones de manera precisa y eficiente, brindándote la tranquilidad de que tu vehículo está en las mejores manos.</p>
+            <a href="#" class="btn btn-primary">Botón 1</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-3" style="width: 100%;" >
+          <img src="{% static 'img/imgcaso/logocard.png' %}" class="card-img-top" alt="Imagen de la tarjeta 2" style="width: 100px; ">
+          <div class="card-body">
+            <h5 class="card-title" style="text-shadow: black 0.1em 0.1em 0.2em">Seguridad en los servicios</h5>
+            <p class="card-text">La seguridad es nuestra máxima prioridad en nuestro taller mecánico. Nos dedicamos a proporcionar servicios confiables y seguros para mantener tu vehículo en óptimas condiciones y brindarte tranquilidad en la carretera.</p>
+            <a href="#" class="btn btn-primary">Botón 2</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-3" style="width: 100%;">
+          <img src="{% static 'img/imgcaso/logoeconomico.png' %}" class="card-img-top" alt="Imagen de la tarjeta 3" style="width:80px;">
+          <div class="card-body">
+            <h5 class="card-title" style="text-shadow: black 0.1em 0.1em 0.2em">Servicios económicos</h5>
+            <p class="card-text">Nuestro taller mecánico ofrece una amplia gama de servicios económicos para satisfacer todas tus necesidades automotrices. Nos especializamos en brindar soluciones asequibles y confiables para mantener tu vehículo en excelente estado sin comprometer tu bolsillo.</p>
+            <a href="#" class="btn btn-primary">Botón 3</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section style="background-color: rgb(17, 17, 17);">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 justify-content-end align-items-center">
+        <img src="{% static 'img/imgcaso/fotoinfocontacto.jpeg' %}" alt="" style="width: 150px; height: auto; object-fit: contain; float: left; margin: 10px; ">
+        <section >
+          <p class="text-white" style="margin: 10px; width: 500px;">
+            Taller Mecánico RayoMakween  
+
+          </p>
+
+          <p class="text-white"style="margin: 10px;">
+            Dirección: Calle Principal #123, Ciudad Santiago, Chile
+
+          </p>
+
+          <p class="text-white"style="margin: 10px;">
+            Teléfono: +56 923 4567
+
+          </p>
+          
+
+
+        </section>
+        
+      </div>
+      
+    </div>
+
+  </div>
+
+</section>
+
+
+<section style="background-color: gray;">
+
+  <h1>sad</h1>
+</section>
+
+
+
+
+
+
+
+
+
 
 {% endblock %}
