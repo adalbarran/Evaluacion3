@@ -19,20 +19,14 @@
 
        
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'index' %}">Inicio </a>
+        <a class="navbar-brand" href="{% url 'index' %}">Taller Mecanico </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'servicios' %}"> Servicios <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'MantencionMotor' %}">Motores</a>
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'MantencionRuedas' %}">Neumaticos</a>
@@ -42,7 +36,7 @@
             </li>
           </ul>
           <span class="navbar-text">
-            FastCar
+            Navbar text with an inline element
           </span>
         </div>
       </nav>
@@ -54,7 +48,7 @@
 <section>
 
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background-color: black;">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -81,7 +75,7 @@
     </a>
   </div>
 
-      
+      {% endblock %}
 
 
 
@@ -92,46 +86,13 @@
     
 </section>
 
-<section style="background-color: rgb(17, 17, 17);">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-6 justify-content-end align-items-center">
-        <img src="{% static 'img/imgcaso/fotoinfocontacto.jpeg' %}" alt="" style="width: 150px; height: auto; object-fit: contain; float: left; margin: 10px; ">
-        <section >
-          <p class="text-white" style="margin: 10px; width: 500px;">
-            Taller Mecánico FastCar
-
-          </p>
-
-          <p class="text-white"style="margin: 10px;">
-            Dirección: Calle Principal #123, Ciudad Santiago, Chile
-
-          </p>
-
-          <p class="text-white"style="margin: 10px;">
-            Teléfono: +56 923 4567
-
-          </p>
-          
 
 
-        </section>
-        
-      </div>
-      
-    </div>
-
-  </div>
-
-</section>
 
 
-{% block body %}
 
-<section>
-  <div>
 
-    
+
 
 <section style="background-color: gray; background-image: url(https://img.freepik.com/fotos-premium/centro-servicio-automoviles-taller-reparacion-automoviles-fondo-borroso_293060-13730.jpg?w=1380); background-repeat:no-repeat;
 background-size: cover;
@@ -143,149 +104,54 @@ background-attachment: fixed;">
 <section style="background-color: rgb(73, 69, 69);">
 
 
-<section style="background-color: rgb(0, 0, 0); background-image: url(https://procarstaller.files.wordpress.com/2019/11/captura-de-pantalla-2019-11-06-a-las-23.21.41.png);background-repeat:no-repeat;
-background-size: cover;
-  background-repeat:no-repeat;
-  background-position: center center;
-  
-  background-attachment: fixed; ">
- 
+  <section style="background-color: gray; background-image: url(https://procarstaller.files.wordpress.com/2019/11/captura-de-pantalla-2019-11-06-a-las-23.21.41.png);background-repeat:no-repeat;
+  background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
     
- <section style="margin-top: 10px;">
+    background-attachment: fixed; ">
+   
+      
+  <h1 class="text-center mx-auto" style="color: rgb(0, 0, 0); background-color: gray; max-width: 500px; border-radius: 5px;   border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 18px #020202; font-style: italic;"> Historia de la empresa </h1>
 
-  <div class="d-flex justify-content-center align-items-center" style="width: 100%;">
-    <div class="card" style="width: 900px; margin-top: 100px;">
-      <div class="card-header" id="headingOne">
-        <h5 class="mb-0">
-          <div class="d-flex justify-content-center align-items-center" style="height: 50px; margin: 5px;">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="width: 350px; height: 40px; text-align: center;">
-              Acerca de nosotros...
-            </button>
-          </div>
-        </h5>
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+      <div class="card text-center" style="width: 600px;" >
+        <div class="card-body" style="text-align: justify;">
+          RayoMakween es un taller mecánico con una historia que se remonta a más de tres décadas. Desde su fundación en 1990 por el visionario emprendedor, Juan Pérez, RayoMakween se ha convertido en un referente en el sector automotriz.
+
+Desde sus humildes comienzos como un pequeño taller de reparación de automóviles, RayoMakween ha experimentado un crecimiento constante y ha ganado la confianza de una amplia base de clientes. La pasión por la excelencia y el compromiso con la satisfacción del cliente han sido los pilares fundamentales de la empresa a lo largo de los años.
+
+Con el tiempo, RayoMakween ha ampliado su gama de servicios para abarcar todas las necesidades automotrices. Desde reparaciones mecánicas y mantenimiento preventivo hasta diagnóstico de problemas eléctricos y servicios de carrocería, el equipo altamente capacitado de RayoMakween está preparado para enfrentar cualquier desafío.
+
+La calidad y precisión en el trabajo son aspectos en los que RayoMakween se destaca. Utilizando tecnología de vanguardia y herramientas especializadas, el equipo de técnicos expertos de RayoMakween se asegura de que cada vehículo sea atendido con el mayor cuidado y profesionalismo.
+
+Además de la excelencia técnica, RayoMakween también se preocupa por brindar un servicio personalizado y amigable. Cada cliente es recibido con una sonrisa y se les ofrece asesoramiento honesto y transparente. La satisfacción del cliente es primordial, y RayoMakween se enorgullece de construir relaciones duraderas con sus clientes basadas en la confianza y la calidad del servicio.
+
+Como parte de su compromiso con la comunidad, RayoMakween también participa activamente en iniciativas de responsabilidad social. Colaborando con organizaciones locales y promoviendo prácticas sostenibles, RayoMakween busca contribuir al bienestar general y al cuidado del medio ambiente.
+
+A medida que RayoMakween avanza hacia el futuro, la empresa se mantiene fiel a sus valores fundamentales: integridad, calidad y satisfacción del cliente. Con una visión clara y un equipo dedicado, RayoMakween se esfuerza por ser el líder indiscutible en el sector de servicios automotrices, proporcionando soluciones confiables y superando las expectativas de sus clientes día tras día.
+        </div>
       </div>
+</section>
+  
     
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
-          En nuestro taller, valoramos la calidad del trabajo y la satisfacción del cliente. Utilizamos herramientas y equipos de última generación para diagnosticar y solucionar problemas de manera eficiente y efectiva. Nos esforzamos por ofrecer un servicio excepcional, brindando atención personalizada y asesoramiento experto para garantizar que sus necesidades y expectativas sean cumplidas.
-          En nuestro taller mecánico, nos apasiona la excelencia y nos comprometemos a superar sus expectativas. 
-          Estamos ansiosos por establecer relaciones duraderas con nuestros clientes y convertirnos en su elección preferida para todas sus necesidades automotrices.
   
-          Visítenos en nuestro nuevo taller y permítanos demostrarle nuestra dedicación y habilidades en el cuidado de su vehículo. ¡Confíe en nosotros para mantener su automóvil en funcionamiento óptimo y en la carretera de manera segura!
-        </div>
-      </div>
     </div>
-  </div>
   
 
-  <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div class="card text-center" style="width: 600px; margin-right: 100px;" >
-      <div class="card-body" style="text-align: justify; text-align: center; margin-top: 10px;">
-        ¡Bienvenidos a nuestro taller mecánico! Somos un nuevo negocio en el mundo de la mecánica automotriz y estamos emocionados de ofrecer nuestros servicios a la comunidad. En nuestro taller, nos dedicamos a brindar soluciones de calidad para mantener su vehículo en óptimas condiciones y garantizar su seguridad en la carretera.
-      </div>
-    </div>
-    <div class="d-flex align-items-center" style="height: auto; margin-top: 10px;">
-      <img src="{% static 'img/imgcaso/cambio-aceite-coche.jpg' %}" alt="Girl in a jacket" style="width: 200px; height: 700px; object-fit: cover;">
-    </div>
-    </section>
-  </div>
     
-</section>
-<section  style="background-color: gray; border-radius: 5px;">
-  <div class="container">
-    <div class="row" >
-      <div class="col-md-4" style="margin-top: 15px;">
-        <div class="card mb-3" style="width: 100%;">
-          <img src="{% static 'img/imgcaso/imagescolumna.png' %}" class="card-img-top" alt="Imagen de la tarjeta 1" style="width: 190px;">
-          <div class="card-body">
-            <h5 class="card-title" style="text-shadow: black 0.1em 0.1em 0.2em">Reparaciones certificadas</h5>
-            <p class="card-text">Nuestro equipo de expertos mecánicos certificados está capacitado para realizar reparaciones de manera precisa y eficiente, brindándote la tranquilidad de que tu vehículo está en las mejores manos.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" style="margin-top: 15px;">
-        <div class="card mb-3" style="width: 100%;" >
-          <img src="{% static 'img/imgcaso/logocard.png' %}" class="card-img-top" alt="Imagen de la tarjeta 2" style="width: 100px; ">
-          <div class="card-body">
-            <h5 class="card-title" style="text-shadow: black 0.1em 0.1em 0.2em">Seguridad en los servicios</h5>
-            <p class="card-text">La seguridad es nuestra máxima prioridad en nuestro taller mecánico. Nos dedicamos a proporcionar servicios confiables y seguros para mantener tu vehículo en óptimas condiciones y brindarte tranquilidad en la carretera.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" style="margin-top: 15px;">
-        <div class="card mb-3" style="width: 100%;">
-          <img src="{% static 'img/imgcaso/logoeconomico.png' %}" class="card-img-top" alt="Imagen de la tarjeta 3" style="width:80px;">
-          <div class="card-body">
-            <h5 class="card-title" style="text-shadow: black 0.1em 0.1em 0.2em">Servicios económicos</h5>
-            <p class="card-text">Nuestro taller mecánico ofrece una amplia gama de servicios económicos para satisfacer todas tus necesidades automotrices. Nos especializamos en brindar soluciones asequibles y confiables para mantener tu vehículo en excelente estado sin comprometer tu bolsillo.</p>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section>
-
-
-
-
-
-</section>
-
-<section style="background-color: gray; background-image: url(https://img.freepik.com/fotos-premium/centro-servicio-automoviles-taller-reparacion-automoviles-fondo-borroso_293060-13730.jpg?w=1380); background-repeat:no-repeat;
-background-size: cover;
-background-repeat:no-repeat;
-background-position: center center;
-
-background-attachment: fixed;">
-
-
-  
-
-
-<div class="d-flex align-items-center" style="height: auto;">
-  <img src="{% static 'img/imgcaso/LOA130922-011F01.jpg' %}" alt="Girl in a jacket" style="max-width: 100%; height: auto; object-fit: cover;">
-</div>
-
-
-
-</section>
-{% endblock %}
-
-
-
-
-</div>
-</section>
-
-
-  
-
-  </div>
-  
-
-
-</section>
-
-
-
-  </div>
-
-</section>
-<section style="background-color: rgb(0, 0, 0);">
-
-
-
-
-
-</section>
-
 
 
   </section>
+
+
+
+
+
+
 
 
 

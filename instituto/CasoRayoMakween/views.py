@@ -8,6 +8,7 @@ def index(request):
 
 def servicios(request):
     context={}
+<<<<<<< HEAD
     return render(request, 'CasoRayoMakween/servicios.html')
 
 def contacto(request):
@@ -26,3 +27,6 @@ def MantencionRuedas(request):
 def MantencionAceite(request):
     context={}
     return render(request, 'CasoRayoMakween/MantencionAceite.html')           
+=======
+    return render(request, 'CasoRayoMakween/servicios.html')    
+>>>>>>> 07a90271d453d4984d3ddc6c41f7f3d8c8d41c57
