@@ -35,9 +35,7 @@
               <a class="nav-link" href="#">Pricing</a>
             </li>
           </ul>
-          <span class="navbar-text">
-            Navbar text with an inline element
-          </span>
+
         </div>
       </nav>
 
@@ -47,7 +45,6 @@
 
 <section>
 
-  {% block body %}
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -76,24 +73,11 @@
     </a>
   </div>
 
-      {% endblock %}
+  <section>
+    <div>
+      {% block body %}
 
-
-
-
-
-
-
-    
-</section>
-
-
-
-
-
-
-
-
+      
 
 <section style="background-color: gray; background-image: url(https://img.freepik.com/fotos-premium/centro-servicio-automoviles-taller-reparacion-automoviles-fondo-borroso_293060-13730.jpg?w=1380); background-repeat:no-repeat;
 background-size: cover;
@@ -114,9 +98,7 @@ background-size: cover;
     background-attachment: fixed; ">
    
       
-  <h1 class="text-center mx-auto" style="color: rgb(0, 0, 0); background-color: gray; max-width: 500px; border-radius: 5px;   border: 1px solid;
-  padding: 10px;
-  box-shadow: 5px 10px 18px #020202; font-style: italic;"> Historia de la empresa </h1>
+
 
 
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
@@ -144,6 +126,27 @@ A medida que RayoMakween avanza hacia el futuro, la empresa se mantiene fiel a s
 
 
   </section>
+
+
+      {% endblock %}
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+    
+</section>
+
+
+
+
+
+
 
 
 
