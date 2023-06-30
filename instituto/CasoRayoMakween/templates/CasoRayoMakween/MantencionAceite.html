@@ -1,0 +1,72 @@
+{% extends './index.html' %}
+{% load static %}
+
+{% block body %}
+<section>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="card" style="margin: 10px;">
+            <img class="card-img-top" src="{% static 'img/imgcaso/t_ed3a650f8d5d4bada5664fa19caef51a_name_paul_walker_rapido_y_furioso.avif '%}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Cambio de Aceite</h5>
+              <p class="card-text">Samuel, un especialista veterano en el area de cambios de aceite. Confía en él para mantener tu vehículo en óptimas condiciones.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Contactar con Samuel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Confirmacion de Contacto</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p> Desea continuar con el proceso?</p>
+    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Atras</button>
+              <a class="btn btn-secondary" aria-current="page" href="{% url 'contacto' %}" id = "btnlogin"> Confirmar </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    
+    </section>
+    
+    <section>
+    
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card" style="margin: 50px; width: auto;">
+              <div class="card-header text-center">Detalle del servicio...</div>
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Diagnóstico de fallas</p>
+                  <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Rectificación de culata</p>
+                  <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Cambio de juntas y retenes</p>
+                  <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Reparación o reemplazo de piezas dañadas</p>
+                  <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Ajuste y calibración de la distribución</p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </section>
+{% endblock %}

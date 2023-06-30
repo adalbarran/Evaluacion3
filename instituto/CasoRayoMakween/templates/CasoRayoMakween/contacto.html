@@ -1,0 +1,332 @@
+{% extends './index.html' %}
+{% load static %}
+
+{% block body %}
+<head>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+<link rel="stylesheet" href="{% static 'css/miestilo.css' %}">
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'js/myjs.js' %}" rel="stylesheet">
+
+</head>
+
+<style>
+
+.form {
+    background-color: #ffffff;
+    width: min(60rem, 100%);
+    height:40rem;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin-top: 150px;
+}
+
+
+
+#btn{
+    margin-top: -400px;
+    color:rgb(255, 255, 255);
+    background-color: black;
+}
+
+
+
+/* FORMULARIO */
+
+
+.form fieldset{
+    border: none;
+}
+
+.form legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .container-camp {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+
+    .camp:nth-child(3),
+    .camp:nth-child(4) {
+    grid-column: 1 / 3;
+    }
+} 
+
+.camp {
+    margin-bottom: 1rem;
+}
+
+.camp label {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.camp textarea {
+    height: 17rem;
+    resize: none;
+}
+
+.input-text {
+    width: 97%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.footer {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(199, 191, 191);
+}
+
+</style>
+
+
+<section>
+
+    <main class="container shade">
+
+        <section>
+            <!-- <h2>Contacto</h2> -->
+            <form class="form container-form" action="Ing_login.html" method="get">
+                <fieldset>
+                    <legend class="text-center header">Contacta con Nosotros</legend>
+
+                    <div class="container-camp">
+                        <div class="camp">
+                            <label>Nombre de usuario</label>
+                            <input class="input-text" type="text" placeholder="Nombre de usuario" id="nombre" required>
+                        </div>
+    
+                        <div class="camp">
+                            <label>Contraseña</label>
+                            <input class="input-text" type="password" placeholder="Contraseña" id="contraseña" required> 
+                        </div>
+
+
+                        <div class="camp">
+                            <label>Correo</label>
+                            <input class="input-text" type="email" placeholder="Tu Correo" id="correo" required> 
+                        </div>
+
+                        <div class="camp">
+                            <label> Comentarios </label>
+                            <input class="input-text" type="text" placeholder="Comentarios/Sugerencias..." id="mensaje" required> 
+                        </div>
+
+
+                    </div>
+
+                    <div class="align-right flex">
+                        <button id = "btn"class="btn btn-primary btn-lg" type="button" onclick="valForm2()">Enviar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+      <script>
+
+function valForm1(){
+    console.log("Pagina Funcionando");
+    var vNom = $('#nombre').val();
+    var vMail = $('#correo').val();
+    var vMensaje = $('#mensaje').val();
+
+    //Validar campo nombre
+
+    if(vNom=="" || vNom==null ) {
+        Err_color("nombre")
+        Err_Contenido("Campo Nombre")
+        return false;
+    }
+
+    else{
+        var expresion = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/;
+        if(!expresion.test(vNom)){
+            Err_color("nombre");
+            Err_Contenido(" nombre, No se permiten caracteres especiales");
+            return false;
+        }
+    }
+
+    if(vMail=="" || vMail==null ) {
+        Err_color("correo")
+        Err_Contenido("correo")
+        return false;
+    }
+
+    else{
+        var expresion = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+        if(!expresion.test(vMail)){
+            Err_color("correo");
+            Err_Contenido(" formato de correo no admitido");
+            return false;
+        }
+    }
+
+    if(vMensaje=="" || vMensaje==null ) {
+        Err_color("mensaje")
+        Err_Contenido("mensaje")
+        return false;
+    }
+
+    else{
+        var expresion = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/;
+        if(!expresion.test(vMensaje)){
+            Err_color("mensaje");
+            Err_Contenido(" mensaje no admitido");
+            return false;
+        }
+    }
+
+    $('form').submit();
+    return true;
+}
+
+
+function Err_color (dato) {
+    $('#' + dato).css({border : '1px solid #dd5144'});
+}
+
+function Err_Contenido (dato) {
+    alert("Error en el ingreso del campo " + dato);
+
+}
+
+function ColorDefault (dato){ 
+    $('#' + dato).css({border : '1px solid #999'});
+    
+}
+
+$('input').focus(function () { 
+   ColorDefault('nombre');
+   ColorDefault('correo');
+   ColorDefault('mensaje');
+    
+})
+
+$('#mensaje').css({resize : 'none'
+});
+
+
+
+
+
+
+
+
+function valForm2(){
+    console.log("Pagina Funcionando");
+    var vNom = $('#nombre').val();
+    var vContra = $('#contraseña').val();
+    var vMensaje = $('#mensaje').val();
+    var vCorreo = $('#correo').val();
+    //Validar campo nombre
+
+    if(vNom=="" || vNom==null ) {
+        Err_color("nombre")
+        Err_Contenido("Campo Nombre de usuario")
+        return false;
+    }
+
+
+
+    
+
+
+    else{
+        var expresion = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/;
+        if(!expresion.test(vNom)){
+            Err_color("nombre");
+            Err_Contenido(" nombre, No se permiten caracteres especiales");
+            return false;
+        }
+    }
+
+
+
+    if(vCorreo=="" || vCorreo==null ) {
+        Err_color("correo")
+        Err_Contenido("Campo correo")
+        return false;
+    }
+
+    else{
+        var expresion = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        if(!expresion.test(vCorreo)){
+            Err_color("correo");
+            Err_Contenido("correo, Ingrese en formato correo");
+            return false;
+        }
+    }
+
+
+
+
+    if(vContra=="" || vContra==null ) {
+        Err_color("Contraseña")
+        Err_Contenido("Contraseña")
+        return false;
+    }
+
+
+    $('form').submit();
+    return true;
+}
+
+
+function Err_color (dato) {
+    $('#' + dato).css({border : '1px solid #dd5144'});
+}
+
+function Err_Contenido (dato) {
+    alert("Error en el ingreso del campo " + dato);
+
+}
+
+function ColorDefault (dato){ 
+    $('#' + dato).css({border : '1px solid #999'});
+    
+}
+
+$('input').focus(function () { 
+   ColorDefault('nombre');
+   ColorDefault('contraseña');
+   ColorDefault('mensaje');
+    
+})
+
+$('#mensaje').css({resize : 'none'
+});
+    </script>
+</section>  
+
+
+<script src="{% static 'js/myjs.js' %}"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+{% endblock %}
