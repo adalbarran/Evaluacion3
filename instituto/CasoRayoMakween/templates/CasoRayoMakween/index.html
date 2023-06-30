@@ -19,14 +19,14 @@
 
        
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'index' %}">Taller Mecanico </a>
+        <a class="navbar-brand" href="{% url 'index' %}">FullCar </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'servicios' %}">Servicios <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Features</a>
@@ -46,7 +46,7 @@
 <section>
 
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background-color: black;">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -73,9 +73,10 @@
     </a>
   </div>
 
+  {% block body %}
+
   <section>
     <div>
-      {% block body %}
 
       
 
@@ -103,35 +104,60 @@ background-size: cover;
 
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
       <div class="card text-center" style="width: 600px;" >
-        <div class="card-body" style="text-align: justify;">
-          RayoMakween es un taller mecánico con una historia que se remonta a más de tres décadas. Desde su fundación en 1990 por el visionario emprendedor, Juan Pérez, RayoMakween se ha convertido en un referente en el sector automotriz.
-
-Desde sus humildes comienzos como un pequeño taller de reparación de automóviles, RayoMakween ha experimentado un crecimiento constante y ha ganado la confianza de una amplia base de clientes. La pasión por la excelencia y el compromiso con la satisfacción del cliente han sido los pilares fundamentales de la empresa a lo largo de los años.
-
-Con el tiempo, RayoMakween ha ampliado su gama de servicios para abarcar todas las necesidades automotrices. Desde reparaciones mecánicas y mantenimiento preventivo hasta diagnóstico de problemas eléctricos y servicios de carrocería, el equipo altamente capacitado de RayoMakween está preparado para enfrentar cualquier desafío.
-
-La calidad y precisión en el trabajo son aspectos en los que RayoMakween se destaca. Utilizando tecnología de vanguardia y herramientas especializadas, el equipo de técnicos expertos de RayoMakween se asegura de que cada vehículo sea atendido con el mayor cuidado y profesionalismo.
-
-Además de la excelencia técnica, RayoMakween también se preocupa por brindar un servicio personalizado y amigable. Cada cliente es recibido con una sonrisa y se les ofrece asesoramiento honesto y transparente. La satisfacción del cliente es primordial, y RayoMakween se enorgullece de construir relaciones duraderas con sus clientes basadas en la confianza y la calidad del servicio.
-
-Como parte de su compromiso con la comunidad, RayoMakween también participa activamente en iniciativas de responsabilidad social. Colaborando con organizaciones locales y promoviendo prácticas sostenibles, RayoMakween busca contribuir al bienestar general y al cuidado del medio ambiente.
-
-A medida que RayoMakween avanza hacia el futuro, la empresa se mantiene fiel a sus valores fundamentales: integridad, calidad y satisfacción del cliente. Con una visión clara y un equipo dedicado, RayoMakween se esfuerza por ser el líder indiscutible en el sector de servicios automotrices, proporcionando soluciones confiables y superando las expectativas de sus clientes día tras día.
+        <div class="card-body" style="text-align: justify; text-align: center; margin: 10px;">
+          Se parte de una empresa en surgimiento...
         </div>
       </div>
     </div>
-  
+  <section style="margin: 10px;">
 
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <div class="d-flex justify-content-center align-items-center" style="height: 100px; ">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="width: 550px; height: 80px; margin: 120px; text-align: center;">
+                Comprometidos con la conciencia ambiental
+              </button>
+            </div>
+            
+          </h5>
+        </div>
+    
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            Una empresa
+
+    Comprometida con el cuidado del medio ambiente,
+    
+    nuestra responsabilidad como empresa está con el medio ambiente, reciclamos gran parte de nuestros residuos, aceites contaminados, baterías en desuso, residuos metálicos como pastillas y discos de frenos, amortiguadores etc. Así también separamos filtros secos contaminados. Tener una buena gestión de residuos es nuestra prioridad.
+        </div>
+      </div>
+</section>
+  
+    
+  
+    </div>
     
 
 
   </section>
 
 
-      {% endblock %}
 
     </div>
+
   </section>
+<section style="background-color: rgb(0, 0, 0);">
+
+
+
+
+
+</section>
+
+  {% endblock %}
+
 
 
 

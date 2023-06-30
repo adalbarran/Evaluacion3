@@ -6,6 +6,6 @@ def index(request):
     context={}
     return render(request, 'CasoRayoMakween/index.html')
 
-def informacion(request):
+def servicios(request):
     context={}
-    return render(request, 'CasoRayoMakween/informacion.html')    
+    return render(request, 'CasoRayoMakween/servicios.html')    
