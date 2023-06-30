@@ -4,29 +4,25 @@ from django.shortcuts import render
 
 def index(request):
     context={}
-    return render(request, 'CasoRayoMakween/index.html')
+    return render(request, 'CasoRayoMakween/index.html', context)
 
 def servicios(request):
     context={}
-<<<<<<< HEAD
-    return render(request, 'CasoRayoMakween/servicios.html')
+    return render(request, 'CasoRayoMakween/servicios.html', context)
 
 def contacto(request):
     context={}
-    return render(request, 'CasoRayoMakween/contacto.html')            
+    return render(request, 'CasoRayoMakween/contacto.html', context)            
 
 def MantencionMotor(request):
     context={}
-    return render(request, 'CasoRayoMakween/MantencionMotor.html')     
+    return render(request, 'CasoRayoMakween/MantencionMotor.html', context)     
 
 
 def MantencionRuedas(request):
     context={}
-    return render(request, 'CasoRayoMakween/MantencionRuedas.html')              
+    return render(request, 'CasoRayoMakween/MantencionRuedas.html', context)              
 
 def MantencionAceite(request):
     context={}
-    return render(request, 'CasoRayoMakween/MantencionAceite.html')           
-=======
-    return render(request, 'CasoRayoMakween/servicios.html')    
->>>>>>> 07a90271d453d4984d3ddc6c41f7f3d8c8d41c57
+    return render(request, 'CasoRayoMakween/MantencionAceite.html', context)           
