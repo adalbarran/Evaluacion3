@@ -28,46 +28,72 @@
       max-width: 300px;
       width: 100%;
     }
+    .form {
+    background-color: #ffffff;
+    width: min(20rem, 100%);
+    height:20rem;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+    </style> 
+
+
+
+
+<section>
+
+  <main class="container shade">
+
+      <section>
+          <!-- <h2>Contacto</h2> -->
+          <form class="form container-form" action="Ing_login.html" method="get">
+              <fieldset>
+                  <legend class="text-center header">Gestion de servicios</legend>
+                  <div class="container text-center py-2 " style=" width: 200px; height: 200px; margin-bottom: 100px; margin-top: 100px;">
+                    <a href="{% url 'gestionser' %}" class="btn btn-primary" style="margin-top: 50px; margin-bottom: 100px;">Gestion Servicios</a>
+                  </div>
+  
+              </fieldset>
+          </form>
+      </section>
+  </main>
+
+</section>
     
-    </style>
 
+    
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for ser in servicios %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ ser.img.url }}" alt="">
+            <div class="card-body">
+              <div class="card-text">
+                <p>ID_servicio: {{ ser.ID_servicio }} <br>
+                  Encargado: {{ ser.Encargado }} <br>
+                  Tipo de Servicio: {{ ser.Tipo_de_Servicio }} <br>
+                  Fecha de Creacion: {{ ser.fecha_creacion }}
 
-
-
-<section style="background-color: rgb(49, 47, 47);">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card mb-3" style="width: 100%;">
-          <img src="{% static 'img/imgcaso/imagescolumna.png' %}" class="card-img-top" alt="Imagen de la tarjeta 1" style="width: 190px;">
-          <div class="card-body">
-            <h5 class="card-title" style="text-shadow: black 0.1em 0.1em 0.2em">Reparaciones certificadas</h5>
-            <p class="card-text">Nuestro equipo de expertos mecánicos certificados está capacitado para realizar reparaciones de manera precisa y eficiente, brindándote la tranquilidad de que tu vehículo está en las mejores manos.</p>
+                </p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Mas Informacion..</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-3" style="width: 100%;" >
-          <img src="{% static 'img/imgcaso/logocard.png' %}" class="card-img-top" alt="Imagen de la tarjeta 2" style="width: 100px; ">
-          <div class="card-body">
-            <h5 class="card-title" style="text-shadow: black 0.1em 0.1em 0.2em">Seguridad en los servicios</h5>
-            <p class="card-text">La seguridad es nuestra máxima prioridad en nuestro taller mecánico. Nos dedicamos a proporcionar servicios confiables y seguros para mantener tu vehículo en óptimas condiciones y brindarte tranquilidad en la carretera.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-3" style="width: 100%;">
-          <img src="{% static 'img/imgcaso/logoeconomico.png' %}" class="card-img-top" alt="Imagen de la tarjeta 3" style="width:80px;">
-          <div class="card-body">
-            <h5 class="card-title" style="text-shadow: black 0.1em 0.1em 0.2em">Servicios económicos</h5>
-            <p class="card-text">Nuestro taller mecánico ofrece una amplia gama de servicios económicos para satisfacer todas tus necesidades automotrices. Nos especializamos en brindar soluciones asequibles y confiables para mantener tu vehículo en excelente estado sin comprometer tu bolsillo.</p>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
-  </div>
-</section>
-
+    
 
 
 <!-- <section style="background-color: rgb(17, 17, 17);">
