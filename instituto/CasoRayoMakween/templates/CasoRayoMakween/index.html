@@ -13,40 +13,51 @@
  
     
 </head>
-<body style="background-color: rgb(75, 72, 72);">
+<body style="background-color: rgb(68, 63, 63);">
 
 <section>
 
        
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'index' %}">Inicio </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'servicios' %}"> Servicios <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'MantencionMotor' %}">Motores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'MantencionRuedas' %}">Neumaticos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'MantencionAceite' %}">Aceite</a>
-            </li>
-          </ul>
-          <span class="navbar-text">
-            FastCar
-          </span>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'index' %}">Inicio </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'servicios' %}"> Servicios <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+        </li>
+       
+        {% if user.is_authenticated %}
+        <li  class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+      <span class="navbar-text">
+        FastCar
+      </span>
+    </div>
+  </nav>
 
+
+
+
+
+
+
+
+
+
+      
 
 </section>
 
@@ -209,7 +220,7 @@ background-size: cover;
   </div>
     
 </section>
-<section  style="background-color: gray; border-radius: 5px;
+<section  style="background-color: rgb(61, 60, 60); border-radius: 5px;
 ">
   <div class="container">
     <div class="row" >

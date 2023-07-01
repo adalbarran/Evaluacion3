@@ -30,6 +30,7 @@ urlpatterns = [
   path('editarservicio/<ID_servicio>', views.editarservicio, name='editarservicio'),
   path('borrarservicio/<ID_servicio>', views.borrarservicio, name='borrarservicio'),
 
+  path('logout', views.signout, name='logout'),
 
 
 

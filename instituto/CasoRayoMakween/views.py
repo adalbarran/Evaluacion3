@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import Automovil,Mecanico,Servicios
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .forms import ServiciosForm
+from django.contrib.auth.decorators import login_required
+
+
 # Create your views here.
 def index(request):
     context={}
@@ -37,7 +39,6 @@ def servicios(request):
     return render(request, 'CasoRayoMakween/servicios.html', context)
 
 
-
 def gestionser(request):
     servicios = Servicios.objects.all()
     context={"servicios":servicios}
@@ -49,6 +50,7 @@ def nuevoser(request):
        formulario.save()
        return redirect('gestionser')
     return render(request, "CasoRayoMakween/Edicion/nuevoservicio.html", {"formulario": formulario})
+
 
 def editarservicio(request, ID_servicio):
     servicio = Servicios.objects.get(ID_servicio=ID_servicio)
@@ -72,8 +74,32 @@ def borrarservicio(request, ID_servicio):
 
 #GESTION USUARIOS
 def login(request):
-    return render(request, "Registration/login.html")
+    return render(request, "registration/login.html")
 
 def salir(request):
     logout(request)
     return redirect('/')
+
+
+#GESTION USUARIOS
+def signin(request):
+    if request.method == 'GET':
+        return render(request, 'registration/login.html',{
+        'form': AuthenticationForm
+    })
+    else:
+        user = authenticate(
+            request, username=request.POST['username'], password=request.POST
+            ['password'])
+        if user is None:
+            return render(request, 'registration/login.html',{
+                'form': AuthenticationForm,
+                'error': 'Username o contraseÃ±a incorrecta'
+            })
+        else:
+            login(request, user)
+            return redirect('index')
+
+def signout(request):
+    logout(request)
+    return redirect('index')
