@@ -29,7 +29,7 @@
       width: 100%;
     }
     .form {
-    background-color: #8d8b8b;
+    background-color: #ffffff;
     width: min(20rem, 100%);
     height:20rem;
     margin: 0 auto;
@@ -47,11 +47,11 @@
 
 <section>
 
-  <main class="container shade">
+  <main class="container shade" style="margin-bottom: 500px;">
 
 
           <!-- <h2>Contacto</h2> -->
-          <form class="form container-form" method="get">
+          <form class="form container-form" method="get" style="margin-top: 0px;">
 
               <fieldset>
                   <legend class="text-center header">Gestion de Servicios</legend>
@@ -66,43 +66,11 @@
 
   </main>
 
-      <main class="container shade">
 
-
-          <!-- <h2>Contacto</h2> -->
-          <form class="form container-form" method="get">
-
-              <fieldset>
-                  <legend class="text-center header">Gestion de Automovil</legend>
-                  <div class="container text-center py-2 " style=" width: 200px; height: 200px; margin-bottom: 100px; margin-top: 100px;">
-                    <a href="{% url 'gestionauto' %}" class="btn btn-primary" style="margin-top: 50px; margin-bottom: 100px;">Gestion Auto</a>
-                  </div>
-  
-              </fieldset>
-          </form>
-
-
-          
-  </main>
 
   <main class="container shade">
 
 
-    <!-- <h2>Contacto</h2> -->
-    <form class="form container-form" method="get">
-
-        <fieldset>
-            <legend class="text-center header">Gestion de Mecanicos</legend>
-            <div class="container text-center py-2 " style=" width: 200px; height: 200px; margin-bottom: 100px; margin-top: 100px;">
-              <a href="{% url 'gestionser' %}" class="btn btn-primary" style="margin-top: 50px; margin-bottom: 100px;">Gestion Servicios</a>
-            </div>
-
-        </fieldset>
-    </form>
-
-
-    
-</main  
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% for ser in servicios %}
@@ -129,12 +97,15 @@
         {% endfor %}
       </div>
     </div>
+
     
+</main  
 
 
 
 
-  </section>
+
+</section>
 
 
 <!-- <section style="background-color: rgb(17, 17, 17);">

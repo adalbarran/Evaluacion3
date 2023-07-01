@@ -29,11 +29,10 @@ urlpatterns = [
   path('nuevoser', views.nuevoser, name='nuevoser'),  
   path('editarservicio/<ID_servicio>', views.editarservicio, name='editarservicio'),
   path('borrarservicio/<ID_servicio>', views.borrarservicio, name='borrarservicio'),
-  path('editarautomovil/<patente>', views.editarautomovil, name='editarservicio'),
-  path('borrarautomovil/<patente>', views.editarautomovil, name='borrarservicio'),
 
-path('logout', views.signout, name='logout'),
-path('login/', views.signin, name='login'),
+
+  path('logout', views.signout, name='logout'),
+  path('login/', views.signin, name='login'),
 
 
 

@@ -99,19 +99,7 @@ def borrarservicio(request, ID_servicio):
     return redirect('gestionser')
 
 
-def editarautomovil(request, patente):
-    servicio = Automovil.objects.get( patente= patente)
-    formulario = ServiciosForm(request.POST or None, request.FILES or None, instance=servicio)
-    if formulario.is_valid() and request.method == 'POST':
-        formulario.save()
-        return redirect('gestionser')
-    return render(request, "CasoRayoMakween/Edicion/editarautomovil.html", {"formulario": formulario})
 
-def borrarautomovil(request, patente):
-    servicios = Automovil.objects.get(patente = patente)
-    servicios.delete()
-    messages.success(request, '¡Vehiculo Eliminado!')
-    return redirect('gestionauto')
 
 
 

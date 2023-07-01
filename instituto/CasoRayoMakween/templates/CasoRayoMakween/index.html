@@ -15,6 +15,14 @@
         transform: scale(1.1);
         transition: transform 0.3s ease;
       }
+      @media (max-width: 768px) {
+    .img-fluid {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  
     </style>
  
  <script>
@@ -27,27 +35,27 @@
   }
 </script>
 </head>
-<body style="background-color: rgb(68, 63, 63);">
+
+<body style="background-color: rgb(0, 0, 0);">
 
 <section>
 
        
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'index' %}">Inicio </a>
+    <a class="navbar-brand" href="{% url 'index' %}">Inicio</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'servicios' %}"> Servicios <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'servicios' %}">Servicios <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
         </li>
-       
         {% if user.is_authenticated %}
-        <li  class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
         </li>
         {% else %}
@@ -57,22 +65,12 @@
         {% endif %}
       </ul>
       <span class="navbar-text">
-        FastCar
+        <img src="{% static 'img/imgcaso/logo-Fastcar-82.png' %}" alt="FastCar Logo" width="100" height="50">
       </span>
     </div>
   </nav>
-
-
-
-
-
-
-
-
-
-
+  
       
-
 </section>
 
 
@@ -138,21 +136,15 @@
 
 
 
-{% block body %}
+
 
 <section>
   <div>
 
     
 
-<section style="background-color: gray; background-image: url(https://img.freepik.com/fotos-premium/centro-servicio-automoviles-taller-reparacion-automoviles-fondo-borroso_293060-13730.jpg?w=1380); background-repeat:no-repeat;
-background-size: cover;
-background-repeat:no-repeat;
-background-position: center center;
 
-background-attachment: fixed;">
 
-<section style="background-color: rgb(73, 69, 69);">
 
 
 <section style="background-color: rgb(0, 0, 0); background-image: url(https://static.wixstatic.com/media/f109259399cc4040a3b1aca1830b8041.jpg/v1/fill/w_1903,h_1199,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/f109259399cc4040a3b1aca1830b8041.jpg);background-repeat:no-repeat;
@@ -161,12 +153,14 @@ background-size: cover;
   background-position: center center;
   
   background-attachment: fixed; ">
+ {% block body %}
+
  
  <section  style=" border-radius: 5px;
  ">
    <div class="container">
      <div class="row" >
-       <div class="col-md-4" style="margin-top: 15px;">
+       <div class="col-md-4" style="margin-top: 50px;">
          <div class="card mb-3" style="width: 100%; background-color: rgba(0, 0, 0, 0.76); color: white;">
            <img src="{% static 'img/imgcaso/imagescolumna.png' %}" class="card-img-top" alt="Imagen de la tarjeta 1" style="width: 190px;">
            <div class="card-body">
@@ -175,7 +169,7 @@ background-size: cover;
            </div>
          </div>
        </div>
-       <div class="col-md-4" style="margin-top: 15px;">
+       <div class="col-md-4" style="margin-top: 50px;">
          <div class="card mb-3" style="width: 100%; background-color: rgba(0, 0, 0, 0.76); color: white;" >
            <img src="{% static 'img/imgcaso/logocard.png' %}" class="card-img-top" alt="Imagen de la tarjeta 2" style="width: 100px; ">
            <div class="card-body">
@@ -184,7 +178,7 @@ background-size: cover;
            </div>
          </div>
        </div>
-       <div class="col-md-4" style="margin-top: 15px;">
+       <div class="col-md-4" style="margin-top: 50px;">
          <div class="card mb-3" style="width: 100%; background-color: rgba(0, 0, 0, 0.76); color: white;">
            <img src="{% static 'img/imgcaso/logoeconomico.png' %}" class="card-img-top" alt="Imagen de la tarjeta 3" style="width:80px; ">
            <div class="card-body">
@@ -197,7 +191,41 @@ background-size: cover;
      </div>
    </div>
  </section>
-     
+ <section style="background-color: rgba(0, 0, 0, 0.603);">
+
+
+
+  <div class="d-flex align-items-center justify-content-center" style="height: auto;">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3500">
+      <div class="carousel-inner text-center">
+        <div class="carousel-item active">
+          <div class="card mx-auto" style="width: 200px; border: 1px solid; padding: 10px; box-shadow: 5px 10px 8px #888888;">
+            <div class="card-body">
+              En FastCar, nos enorgullece ofrecerte un servicio rápido y eficiente sin comprometer la calidad.
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card mx-auto" style="width: 200px; border: 1px solid; padding: 10px; box-shadow: 5px 10px 8px #888888;">
+            <div class="card-body">
+              Nuestra amplia gama de servicios abarca desde cambios de aceite y reparaciones de motor.
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card mx-auto" style="width: 200px; border: 1px solid; padding: 10px; box-shadow: 5px 10px 8px #888888;">
+            <div class="card-body">
+              Visítanos en FastCar y experimenta la diferencia de un taller mecánico que se preocupa por ti y tu vehículo!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    
+  
+  </section>    
  <section>
   <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="d-flex align-items-center" style="height: auto; margin-top: 10px; margin-left: 10px; margin-right: 50px;">
@@ -237,41 +265,7 @@ background-attachment: fixed;">
 
 </section>
 
-<section style="background-color: rgba(0, 0, 0, 0.603);">
 
-
-
-  <div class="d-flex align-items-center justify-content-center" style="height: auto;">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="5000">
-      <div class="carousel-inner text-center">
-        <div class="carousel-item active">
-          <div class="card mx-auto" style="width: 200px; border: 1px solid; padding: 10px; box-shadow: 5px 10px 8px #888888;">
-            <div class="card-body">
-              En FastCar, nos enorgullece ofrecerte un servicio rápido y eficiente sin comprometer la calidad.
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card mx-auto" style="width: 200px; border: 1px solid; padding: 10px; box-shadow: 5px 10px 8px #888888;">
-            <div class="card-body">
-              Nuestra amplia gama de servicios abarca desde cambios de aceite y reparaciones de motor.
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card mx-auto" style="width: 200px; border: 1px solid; padding: 10px; box-shadow: 5px 10px 8px #888888;">
-            <div class="card-body">
-              Visítanos en FastCar y experimenta la diferencia de un taller mecánico que se preocupa por ti y tu vehículo!
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-    
-  
-  </section>
 
 {% endblock %}
 
@@ -358,29 +352,40 @@ background-attachment: fixed;">
 
 
 
-<footer class="bg-dark text-center text-white" style="
-    
-
-  width: 100%;
-  height: 10%;text-align: center; height: 100px;">
+<footer class="bg-dark text-center text-white">
   <!-- Grid container -->
   <div class="container p-4 pb-0">
     <!-- Section: Social media -->
     <section class="mb-4">
-
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
 
       <!-- Twitter -->
-      <a id = "imagenredes" class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img style="object-fit: contain; width: 50px; height: 50px;" src="{% static 'img/imgcaso/png-transparent-computer-icons-facebook-blog-facebook-logo-desktop-wallpaper-facebook-icon-removebg-preview.png' %}"  /></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
 
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
 
       <!-- Instagram -->
-      <a id = "imagenredes" class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img style="object-fit: contain; width: 50px; height: 50px;" src="{% static 'img/imgcaso/insta-removebg-preview.png' %}" /></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
 
       <!-- Github -->
-      <a id = "imagenredes" class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><img style="object-fit: contain; width: 50px; height: 50px;" src="{% static 'img/imgcaso/png-transparent-computer-icons-twitter-logo-logo-monochrome-black-removebg-preview.png' %}" /></a>
-
-
-
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
     </section>
     <!-- Section: Social media -->
   </div>
@@ -388,11 +393,10 @@ background-attachment: fixed;">
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    Redes Sociales 
-    
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
   </div>
   <!-- Copyright -->
-
 </footer>
 
 
