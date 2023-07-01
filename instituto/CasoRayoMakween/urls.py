@@ -19,18 +19,18 @@ urlpatterns = [
 
   path('MantencionAceite', views.MantencionAceite, name='MantencionAceite'),
 
-  path('login', views.login, name='login'),
 
 
   path("accounts/", include("django.contrib.auth.urls")),
 
-    #CRUD
+  #CRUD
   path('gestionser', views.gestionser, name='gestionser'),
   path('nuevoser', views.nuevoser, name='nuevoser'),  
   path('editarservicio/<ID_servicio>', views.editarservicio, name='editarservicio'),
   path('borrarservicio/<ID_servicio>', views.borrarservicio, name='borrarservicio'),
 
-  path('logout', views.signout, name='logout'),
+path('logout', views.signout, name='logout'),
+path('login/', views.signin, name='login'),
 
 
 

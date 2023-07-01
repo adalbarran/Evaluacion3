@@ -4,6 +4,11 @@ from django.contrib import messages
 from django.contrib.auth import logout
 from .forms import ServiciosForm
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render,get_object_or_404,redirect
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
+from django.db import IntegrityError
 
 
 # Create your views here.
@@ -30,7 +35,28 @@ def MantencionAceite(request):
     context={}
     return render(request, 'CasoRayoMakween/MantencionAceite.html', context)           
 
+#GESTION USUARIOS
+def signin(request):
+    if request.method == 'GET':
+        return render(request, 'registration/login.html',{
+        'form': AuthenticationForm
+    })
+    else:
+        user = authenticate(
+            request, username=request.POST['username'], password=request.POST
+            ['password'])
+        if user is None:
+            return render(request, 'registration/login.html',{
+                'form': AuthenticationForm,
+                'error': 'Username o contraseÃ±a incorrecta'
+            })
+        else:
+            login(request, user)
+            return redirect('index')
 
+def signout(request):
+    logout(request)
+    return redirect('index')
 
 
 def servicios(request):
@@ -73,33 +99,11 @@ def borrarservicio(request, ID_servicio):
 
 
 #GESTION USUARIOS
-def login(request):
-    return render(request, "registration/login.html")
+# def login(request):
+#     return render(request, "registration/login.html")
 
-def salir(request):
-    logout(request)
-    return redirect('/')
+# def salir(request):
+#     logout(request)
+#     return redirect('/')
 
 
-#GESTION USUARIOS
-def signin(request):
-    if request.method == 'GET':
-        return render(request, 'registration/login.html',{
-        'form': AuthenticationForm
-    })
-    else:
-        user = authenticate(
-            request, username=request.POST['username'], password=request.POST
-            ['password'])
-        if user is None:
-            return render(request, 'registration/login.html',{
-                'form': AuthenticationForm,
-                'error': 'Username o contraseÃ±a incorrecta'
-            })
-        else:
-            login(request, user)
-            return redirect('index')
-
-def signout(request):
-    logout(request)
-    return redirect('index')

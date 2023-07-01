@@ -2,7 +2,7 @@
 {% block title %} PG | Login {% endblock %}
 
 {% block body %}
-<style>
+<!-- <style>
 
     .row1 {
         background-color: #ffffff;
@@ -94,7 +94,7 @@
 <div class="row1">
       <div class="col-lg-4 offset-lg-4 ">
           <h2 class="fw-bold text-center py-5">Bienvenido</h2>
-          <!-- LOGIN -->
+          
           <form method="post">
             {% csrf_token %}
               <div class="form-group mb-1">
@@ -123,6 +123,11 @@
       </div>
     
   </div>
-</section>
-
+</section> -->
+<h2>Iniciar sesión</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Iniciar sesión</button>
+</form>
 {% endblock %} 
