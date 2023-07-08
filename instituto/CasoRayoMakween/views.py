@@ -33,7 +33,32 @@ def MantencionRuedas(request):
 
 def MantencionAceite(request):
     context={}
-    return render(request, 'CasoRayoMakween/MantencionAceite.html', context)           
+    return render(request, 'CasoRayoMakween/MantencionAceite.html', context) 
+              
+def register_view(request):
+    if request.method == 'GET':
+        return render(request, 'registration/register.html', {
+            'form': UserCreationForm
+        })
+    else:
+        if request.POST['password1'] == request.POST['password2']:
+                try:
+                    user = User.objects.create_user(
+                    username=request.POST['username'],
+                    password =request.POST['password1'])
+                    user.save()
+                    login(request, user)
+                    return redirect('index')
+                except IntegrityError:
+                    return render(request, 'registration/register.html', {
+                    'form': UserCreationForm,
+                    "error" : 'Usuario ya existe'
+                })
+            
+        return render(request, 'registration/register.html', {
+                    'form': UserCreationForm,
+                    "error" : 'La contraseña no coincide'
+                })
 
 #GESTION USUARIOS
 def signin(request):
@@ -64,7 +89,7 @@ def servicios(request):
     context={"servicios":servicios}
     return render(request, 'CasoRayoMakween/servicios.html', context)
 
-
+@login_required
 def gestionser(request):
     servicios = Servicios.objects.all()
     context={"servicios":servicios}
